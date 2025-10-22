@@ -1,0 +1,8 @@
+[
+  { "id": "v01", "title": "City Cam", "src": "", "poster": "", "description": "Nœud urbain densité ++" },
+  { "id": "v02", "title": "Orbital Relay", "src": "", "poster": "", "description": "Relais orbital - vectorisation active" },
+  { "id": "v03", "title": "Harbor Watch", "src": "", "poster": "", "description": "Trafic maritime synchronisé" },
+  { "id": "v04", "title": "Data Spine", "src": "", "poster": "", "description": "Flux backbone crypté" },
+  { "id": "v05", "title": "Desert Array", "src": "", "poster": "", "description": "Capteurs solaires connectés" },
+  { "id": "v06", "title": "Aurora Node", "src": "", "poster": "", "description": "Observations ionosphériques" }
+]

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eye of God</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div id="app" class="app-shell">
+      <header class="hud" aria-label="Interface principale">
+        <div class="hud__group">
+          <button id="reduce-motion-toggle" class="hud__btn" type="button" aria-pressed="false">
+            Reduce Motion
+          </button>
+          <button id="random-site" class="hud__btn" type="button">
+            Random site
+          </button>
+        </div>
+        <div class="hud__status" role="status" aria-live="polite">
+          <span id="hud-clock">--:--:--</span>
+          <span id="hud-fps">fps: --</span>
+        </div>
+      </header>
+
+      <main class="stage" aria-label="Vue du globe">
+        <div id="scene-container" class="scene" role="presentation"></div>
+        <canvas id="fallback-canvas" class="fallback-canvas" hidden aria-hidden="true"></canvas>
+        <div id="node-tooltip" class="node-tooltip" role="status" aria-live="polite"></div>
+      </main>
+
+      <nav id="access-node-list" class="sr-only" aria-label="Accès clavier aux nœuds"></nav>
+
+      <section
+        id="overlay"
+        class="overlay"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+        aria-labelledby="overlay-title"
+      >
+        <div class="overlay__backdrop"></div>
+        <div class="overlay__content" role="document">
+          <header class="overlay__header">
+            <div>
+              <p class="overlay__telemetry" id="overlay-telemetry"></p>
+              <h2 id="overlay-title" class="overlay__title">Canal sécurisé</h2>
+            </div>
+            <button id="overlay-close" class="overlay__close" type="button" aria-label="Fermer">
+              ✕
+            </button>
+          </header>
+          <div class="overlay__body">
+            <div class="overlay__player" aria-label="Simulation vidéo">
+              <div class="overlay__monitor">
+                <div class="overlay__scanlines"></div>
+                <div class="overlay__mock-content">
+                  <div class="overlay__grid"></div>
+                  <p class="overlay__lorem">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+                  </p>
+                </div>
+              </div>
+              <div class="overlay__controls">
+                <button id="overlay-play" class="overlay__btn" type="button" aria-pressed="true">Pause</button>
+                <div class="overlay__progress" role="presentation">
+                  <div id="overlay-progress-bar" class="overlay__progress-bar"></div>
+                </div>
+                <span id="overlay-timecode" class="overlay__timecode" aria-live="off">00:00</span>
+              </div>
+            </div>
+            <aside class="overlay__meta">
+              <h3 class="overlay__node" id="overlay-node"></h3>
+              <p class="overlay__description" id="overlay-description">
+                Surveillance en cours. Flux chiffré.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
